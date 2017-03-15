@@ -2,7 +2,7 @@
   "name": "jdb-cli",
   "version": "0.0.1",
   "description": "一个脚手架",
-  "main": "index.js",
+  "main": "./bin/jdb.js",
   "bin": {
     "jdb": "./bin/jdb.js"
   },
@@ -13,6 +13,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-template": "^4.0.0",
     "inquirer": "^3.0.6",
+    "line-by-line": "^0.1.5",
     "yargs": "^7.0.2"
   },
   "devDependencies": {},
