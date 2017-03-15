@@ -1,4 +1,8 @@
-
+/**
+ * @name    <%= name %>
+ * @author  <%= author %>
+ * @date    <%= date %>
+ */
 angular.module(JDBModule.getAppName())
     .controller('jdbApp<%= uppername %><%= classname %>Ctrl', ['$scope', 'jdbApp<%= uppername %>Api', function ($scope, Api) {
         

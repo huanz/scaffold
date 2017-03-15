@@ -10,6 +10,7 @@ function init(answers) {
     var templateDir = argv.argv.templates;
     var projectDir = utils.getProjectDir();
     if (projectDir) {
+        console.log(answers);
         //gulp.src(path.join(templateDir, 'app', ''))
     } else {
         console.log('请在项目根目录执行该命令');
