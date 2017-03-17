@@ -7,13 +7,13 @@ npm i @JDB/jdb-cli -g
 ## usage
 
 ```
-jdb help
-```
-
-部分系统安装了`java`运行环境，可能`jdb`命令已经被占用，你可以用下面的命令：
-
-```
 yoho help
+```
+
+当然你也可以使用`jdb`命令，如果你的系统允许的话：
+
+```
+jdb help
 ```
 
 命令：
