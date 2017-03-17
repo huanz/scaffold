@@ -1,6 +1,12 @@
 # jdb-cli
 
 ```
+npm i @JDB/jdb-cli -g
+```
+
+## usage
+
+```
 jdb help
 ```
 
