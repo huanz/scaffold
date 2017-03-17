@@ -1,4 +1,4 @@
-angular.module(JDBModule.getAppName())
+angular.module(<%= modulename %>)
     .directive('viewTitle', ['cordovaUtils', function (cordovaUtils) {
         return {
             restrict: 'A',

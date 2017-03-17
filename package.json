@@ -1,7 +1,7 @@
 {
   "name": "jdb-cli",
   "version": "0.0.1",
-  "description": "一个脚手架",
+  "description": "内部初始化项目专用脚手架",
   "main": "./bin/jdb.js",
   "bin": {
     "jdb": "./bin/jdb.js"
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huanz/jdb-cli.git"
+    "url": "git+http://git.jdb-dev.com/yuhz/jdb-cli.git"
   },
   "author": "bukas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huanz/jdb-cli/issues"
+    "url": "http://git.jdb-dev.com/yuhz/jdb-cli/issues"
   },
-  "homepage": "https://github.com/huanz/jdb-cli#readme"
+  "homepage": "http://git.jdb-dev.com/yuhz/jdb-cli#readme"
 }

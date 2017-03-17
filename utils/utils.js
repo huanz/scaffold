@@ -49,6 +49,14 @@ exports.validate = function (value) {
     return '必须为字母、数字、下划线';
 };
 
+exports.getPkgName = function (dir) {
+    try {
+        return require(path.join(dir || process.cwd(), 'package.json')).name
+    } catch (error) {
+
+    }
+};
+
 exports.getUser = function () {
     var env = null;
     var envVar = '';
@@ -90,13 +98,17 @@ exports.now = function () {
 exports.insertRequire = function (dir, type, file) {
     var appjs = path.join(dir, 'app', 'scripts', 'app.js');
     var insertText = "require('./" + type + "s/" + file + "');";
-    var content = fs.writeFileSync(appjs);
+    var content = fs.readFileSync(appjs);
     var lr = null;
     var results = [];
     // 是否已经插入
     var inserted = false;
     var lines = {
-        require: 0,
+        strict: 0,
+        require: {
+            start: '0',
+            end: 0
+        },
         service: 0,
         controller: 0
     };
@@ -104,26 +116,53 @@ exports.insertRequire = function (dir, type, file) {
         lr = new LineByLineReader(appjs);
         lr.on('line', function (line) {
             results.push(line);
-            if (/require/.test(line)) {
-                if (!lines.require) {
-                    lines.require = results.length - 1;
+
+            if (!inserted) {
+                if (/require/.test(line)) {
+                    if (lines.require.start === '0') {
+                        lines.require.start = results.length - 1;
+                    }
+                    lines.require.end = results.length;
+                    /**
+                     * @desc 记录service结束的地方
+                     */
+                    if (/services/.test(line)) {
+                        lines.service = results.length;
+                    }
+                    /**
+                     * @desc 记录controller开始的地方
+                     */
+                    if (!lines.controller && /controllers/.test(line)) {
+                        lines.controller = results.length;
+                    }
+                    /**匹配到当前类型直接插入 */
+                    if (new RegExp(type).test(line)) {
+                        results.push(insertText);
+                        inserted = true;
+                    }
                 }
-                if (/service/.test(line)) {
-                    lines.service = results.length - 1;
-                }
-                if (/controller/.test(line)) {
-                    lines.controller = results.length - 1;
-                }
-                /**匹配到当前类型直接插入 */
-                if (!inserted && new RegExp(type).test(line)) {
-                    results.push(insertText);
-                    inserted = true;
+                if (!inserted && !lines.strict && /use\s+strict/.test(line)) {
+                    lines.strict = results.length;
                 }
             }
         });
         lr.on('end', function () {
-            var position = lines[type] || (lines.controller - 1) || lines.require;
+            var position = lines[type];
             if (!inserted) {
+                if (!position) {
+                    switch (type) {
+                        case 'controller':
+                            position = lines.controller || lines.require.end;
+                            break;
+                        case 'service':
+                            position = lines.service || lines.require.start;
+                            break;
+                        default:
+                            position = lines.controller || lines.service || lines.require.end;
+                            break;
+                    }
+                    position = position || lines.strict || 0;
+                }
                 results.splice(position, 0, insertText);
             }
             fs.writeFile(appjs, results.join('\n'), function () {

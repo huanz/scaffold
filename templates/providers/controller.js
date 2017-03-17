@@ -4,6 +4,6 @@
  * @date    <%= date %>
  */
 angular.module(<%= modulename %>)
-    .controller('<%= name %>Ctrl', ['$scope', function ($scope) {
+    .controller('<%= prefix %><%= uppername %>Ctrl', ['$scope', function ($scope) {
 
     }]);

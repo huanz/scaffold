@@ -1,5 +1,5 @@
-angular.module(JDBModule.getAppName())
-    .service('jdbApp<%= uppername %>Api', ['$q', 'jdbApi', '$ionicLoading', function ($q, jdbApi, $ionicLoading) {
+angular.module(<%= modulename %>)
+    .service('<%= prefix %>Api', ['$q', 'jdbApi', '$ionicLoading', function ($q, jdbApi, $ionicLoading) {
         var cachePool = {};
 
         /**
