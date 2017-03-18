@@ -6,7 +6,7 @@ var init = require('../commands/init');
 var create = require('../commands/create');
 
 require('yargs')
-    .usage('jdb <cmd> [args]')
+    .usage('yoho <cmd> [args]')
     .config({
         templates: path.join(__dirname, '..', 'templates')
     })

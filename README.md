@@ -1,19 +1,13 @@
-# jdb-cli
+# yoho
 
 ```
-npm i @JDB/jdb-cli -g
+npm i yoho -g
 ```
 
 ## usage
 
 ```
 yoho help
-```
-
-当然你也可以使用`jdb`命令，如果你的系统允许的话：
-
-```
-jdb help
 ```
 
 命令：

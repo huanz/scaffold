@@ -1,34 +1,33 @@
 {
-  "name": "@JDB/jdb-cli",
-  "version": "0.0.1",
-  "description": "内部初始化项目专用脚手架",
-  "main": "./bin/jdb.js",
-  "bin": {
-    "jdb": "./bin/jdb.js",
-    "yoho": "./bin/jdb.js"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-if": "^2.0.2",
-    "gulp-install": "^0.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-template": "^4.0.0",
-    "inquirer": "^3.0.6",
-    "line-by-line": "^0.1.5",
-    "yargs": "^7.0.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+http://git.jdb-dev.com/yuhz/jdb-cli.git"
-  },
-  "author": "bukas",
-  "license": "ISC",
-  "bugs": {
-    "url": "http://git.jdb-dev.com/yuhz/jdb-cli/issues"
-  },
-  "homepage": "http://git.jdb-dev.com/yuhz/jdb-cli#readme"
+    "name": "yoho",
+    "version": "0.0.1",
+    "description": "内部初始化项目专用脚手架",
+    "main": "./bin/yoho.js",
+    "bin": {
+        "yoho": "./bin/yoho.js"
+    },
+    "dependencies": {
+        "gulp": "^3.9.1",
+        "gulp-if": "^2.0.2",
+        "gulp-install": "^0.6.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-template": "^4.0.0",
+        "inquirer": "^3.0.6",
+        "line-by-line": "^0.1.5",
+        "yargs": "^7.0.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/huanz/yoho.git"
+    },
+    "author": "bukas",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/huanz/yoho/issues"
+    },
+    "homepage": "https://github.com/huanz/yoho#readme"
 }
