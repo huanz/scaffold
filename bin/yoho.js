@@ -4,6 +4,7 @@
 var path = require('path');
 var init = require('../commands/init');
 var create = require('../commands/create');
+var gulp = require('../commands/gulp');
 
 require('yargs')
     .usage('yoho <cmd> [args]')
@@ -12,5 +13,6 @@ require('yargs')
     })
     .command('init [name]', '创建项目', {}, init)
     .command('create', '创建controller、filter、directive', {}, create)
+    .command('*', '启动gulp命令', {}, gulp)
     .help()
     .argv;
