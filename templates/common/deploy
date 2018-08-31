@@ -1,5 +1,0 @@
-dev,gulp dev,dist
-test,gulp test,dist
-beta,gulp beta,dist
-newBeta,gulp newBeta,dist
-prod,gulp prod,dist

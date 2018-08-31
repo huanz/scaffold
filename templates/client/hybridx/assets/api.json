@@ -1,0 +1,11 @@
+{
+    // 接口配置示例
+    "mainApi": {
+        "serve": "main.json",
+        "dev": "http://dev.jiedaibao.com/",
+        "test": "http://test.jiedaibao.com/",
+        "newBeta": "http://tradeapi.newbeta.jiedaibao.com/",
+        "huidu": "http://tradeapi.huidu.jiedaibao.com/",
+        "prod": "https://tradeapi.jiedaibao.com/"
+    }
+}

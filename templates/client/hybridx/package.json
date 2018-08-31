@@ -1,0 +1,16 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@JDB/build": "^0.1.111",
+    "gulp": "^3.9.1",
+    "shelljs": "^0.7.5"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "jdb": {
+      "type": "<%= type %>",
+      "template": "<%= template %>"
+  }
+}

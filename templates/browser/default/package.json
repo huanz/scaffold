@@ -1,0 +1,38 @@
+{
+    "name": "<%= name %>",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "gulp",
+        "test": "gulp build --env=test",
+        "huidu": "gulp build --env=huidu",
+        "prod": "gulp build --env=prod",
+        "deploy": "yoho deploy",
+        "precommit": "gulp lint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@git.jdb-dev.com:yuhz/cli-template-browser-default.git"
+    },
+    "author": "bukas",
+    "license": "ISC",
+    "devDependencies": {
+        "@jdb/yoho-build": "^0.1.2"
+    },
+    "browserify-shim": {
+        "Zepto": "global:Zepto"
+    },
+    "dependencies": {
+        "mixins-sass": "^1.1.3",
+        "normalize.css": "^8.0.0",
+        "zepto": "^1.2.0"
+    },
+    "engines": {
+        "node": ">=6"
+    },
+    "jdb": {
+        "type": "<%= type %>",
+        "template": "<%= template %>"
+    }
+}
